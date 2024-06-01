@@ -15,7 +15,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +34,228 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.game-container {
+  display: flex;
+  margin-top: 60px;
+  padding-top: 50px; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #e490c1, #b926a1);
+  background-size: cover;
+  background-position: center center; /* Center the background image both horizontally and vertically */
+  background-attachment: fixed; /* Optional: May help in ensuring visibility */
+}
+
+
+.background-image {
+  position: absolute;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+}
+
+.sentence {
+  margin-bottom: 20px;
+}
+.play-again-button {
+  width: 10vw; /* Adjust the width as needed */
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.style-container {
+  background-color: #67b7ec;
+  border: 1px solid #090a0a;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.modal-style {
+  background-color: #8df883;
+  border: 1px solid #47867e;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.space-between-images {
+  width: 40px;
+}
+
+
+
+.heading-in-navbar {
+  color: azure;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+}
+
+.other-text-navbar {
+  color: skyblue;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.image-container {
+  position: relative;
+}
+
+.image-container:hover {
+  cursor: pointer;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1;
+  margin:10% 30% 10% 30% ;
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.image-wrapper {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: transparent; /* default background color */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.image-wrapper:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.image-wrapper.green {
+  background-color: rgb(77, 211, 77);
+}
+
+.image-wrapper.red {
+  background-color: rgb(230, 82, 82);
+}
+.full-width-navbar {
+  width: 100%;
+  height:110px;
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0; /* Positions the navbar at the top of the viewport */
+  z-index: 1000; /* Ensures the navbar is above other elements */
+  background-color: black; /* Sets the background color to black */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-logo {
+  height: 90px;
+  width:350px; /* Adjust the height to fit your design */
+}
+
+.screen-info {
+  display: flex;
+  align-items: center;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.screen-info h5 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.screen-info h5 h2 {
+  margin-left: 8px;
+}
+
+.other-text-navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  margin-left: 20px;
+}
+
+.progress-bar-container {
+  width: 95%;
+  margin-left: 20px;
+  height: 10px;
+  background-color: #e0e0e0;
+  margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden; /* Ensures the progress bar is confined within the container */
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #76c7c0;
+  transition: width 0.5s ease;
+  border-radius: 5px 0 0 5px; /* Smooth edges on the left side */
+}
+
+.transparent-box {
+  background-color: rgba(105, 104, 104, 0.26);
+    border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100px;
+  width: 95%;
+  flex-direction: row;
 }

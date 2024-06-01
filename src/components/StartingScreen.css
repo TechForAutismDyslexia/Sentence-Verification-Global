@@ -1,0 +1,26 @@
+/* StartingScreen.css */
+
+.starting-screen {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align items to the bottom */
+  height: 100vh;
+  background-color: black; /* Set background color to black */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.play-button {
+  font-size: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 50px; /* Adjust the margin as needed */
+  background-color: #38b6ff;
+  font-weight: 300;
+  border-radius: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.play-button:hover {
+  background-color: #1485ee;
+}
