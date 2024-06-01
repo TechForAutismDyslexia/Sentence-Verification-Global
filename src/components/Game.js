@@ -203,6 +203,7 @@ function Game() {
               {shuffledData[currentLevel].sentence}
             </div>
           </div>
+          <div className="images-outer-container">
           <div className="images-container" style={{ display: 'flex', justifyContent: 'center' }}>
             {shuffledData[currentLevel].images.map((image, index) => (
               <div key={index} className="image-wrapper" style={{ backgroundColor: backgroundColors[index] }}>
@@ -215,6 +216,8 @@ function Game() {
               </div>
             ))}
           </div>
+          </div>
+      
           {/* Next button */}
          
           {/* Modal */}
