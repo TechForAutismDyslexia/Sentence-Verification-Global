@@ -11,8 +11,8 @@ export default function Navbar({ attempts, elapsedTime, currentScreen, totalScre
           </h5>
         </div>
         <div className="other-text-navbar">
-          <h3 style={{ color: 'skyblue', fontFamily:'cursive'}}>Attempts: <span style={{ color: 'white' }}>{attempts}</span></h3>
-          <h3 style={{ color: 'skyblue',fontFamily:'cursive' }}>Time: <span style={{ color: 'red' }}>{Math.floor(elapsedTime / 1000)}<span style={{ color: 'white' }}> seconds</span></span></h3>
+          <h3 style={{ color: 'skyblue' }}>Attempts: <span style={{ color: 'white' }}>{attempts}</span></h3>
+          <h3 style={{ color: 'skyblue'}}>Time: <span style={{ color: 'red' }}>{Math.floor(elapsedTime / 1000)}<span style={{ color: 'white' }}> seconds</span></span></h3>
         </div>
       </div>
     </div>
