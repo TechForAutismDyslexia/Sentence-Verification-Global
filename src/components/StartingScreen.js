@@ -16,6 +16,7 @@ function StartingScreen() {
         <Link to="/game">
           <button className="play-button">Play Game</button>
         </Link>
+        <p style={{color:'red',  textAlign:'inherit'}}>Please use in PC</p>
       </div>
     </div>
   );

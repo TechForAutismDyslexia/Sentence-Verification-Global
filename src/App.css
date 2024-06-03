@@ -47,6 +47,8 @@
   background-size: cover;
   background-position: center center; /* Center the background image both horizontally and vertically */
   background-attachment: fixed; /* Optional: May help in ensuring visibility */
+  background-repeat: repeat-y;
+
 }
 
 
