@@ -12,11 +12,11 @@ function StartingScreen() {
         backgroundPosition: 'center'
       }}
     >
-      <div>
+      <div style={{textAlign:'center', justifyContent:'center', alignItems:'center'}}>
         <Link to="/game">
           <button className="play-button">Play Game</button>
         </Link>
-        <p style={{color:'red',  textAlign:'inherit'}}>Please use in PC</p>
+        <p style={{color:'red'}}>Please use in PC</p>
       </div>
     </div>
   );
