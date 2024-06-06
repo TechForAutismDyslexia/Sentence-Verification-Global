@@ -51,6 +51,8 @@
     font-size: 18px;
     padding: 10px 20px;
     margin-bottom: 30px;
+    height:80px;
+    width:140px;
   }
 }
 
@@ -60,5 +62,7 @@
     font-size: 16px;
     padding: 8px 16px;
     margin-bottom: 20px;
+    height:80px;
+    width:140px;
   }
 }
