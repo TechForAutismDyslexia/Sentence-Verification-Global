@@ -99,8 +99,9 @@
 }
 
 .image-container {
-  position: relative;
-}
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap}
 
 .image-container:hover {
   cursor: pointer;
@@ -233,7 +234,7 @@
   margin-left: 20px;
   height: 10px;
   background-color: #e0e0e0;
-  margin-top: 90px;
+  margin-top: 40px;
   border-radius: 5px;
   overflow: hidden; /* Ensures the progress bar is confined within the container */
 }
@@ -249,7 +250,7 @@
   background-color: rgba(105, 104, 104, 0.26);
   border-radius: 10px;
   padding: 10px;
-  margin-top: 120px;
+  margin-top: 20px;
   margin-left: 40px;
   margin-right: 40px;
   display: flex;
@@ -258,6 +259,35 @@
   height: auto;
   width: 95%;
   flex-direction: row;
+}
+.image-wrapper {
+  margin: 10px;
+}
+
+.image-wrapper img {
+  max-width: 100%; /* Ensures the image will not overflow the wrapper */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+@media (max-width: 1200px) {
+  .image-wrapper img {
+    width: 250px; /* Adjust width for smaller screens */
+    height: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .image-wrapper img {
+    width: 200px; /* Adjust width for smaller screens */
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-wrapper img {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 200px;
+  }
 }
 
 /* Responsive styles */

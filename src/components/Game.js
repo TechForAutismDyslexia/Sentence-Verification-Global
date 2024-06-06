@@ -210,18 +210,19 @@ function Game() {
               {shuffledData[currentLevel].sentence}
             </div>
           </div>
-          <div className="images-container" style={{ display: 'flex', justifyContent: 'center' }}>
-            {shuffledData[currentLevel].images.map((image, index) => (
-              <div key={index} className="image-wrapper" style={{ backgroundColor: backgroundColors[index] }}>
-                <img
-                  src={`./images/screen_${shuffledData[currentLevel].screen}_imgs/${image}`}
-                  alt={`Image ${index + 1}`}
-                  style={{ width: '300px', height: '500px', cursor: 'pointer' }}
-                  onClick={() => handleChoice(image, index)}
-                />
-              </div>
-            ))}
-          </div>
+          <div className="images-container">
+  {shuffledData[currentLevel].images.map((image, index) => (
+    <div key={index} className="image-wrapper" style={{ backgroundColor: backgroundColors[index] }}>
+      <img
+        src={`./images/screen_${shuffledData[currentLevel].screen}_imgs/${image}`}
+        alt={`Image ${index + 1}`}
+        style={{ width: '300px', height: '500px', cursor: 'pointer' }}
+        onClick={() => handleChoice(image, index)}
+      />
+    </div>
+  ))}
+</div>
+
           {/* Next button */}
          
           {/* Modal */}
