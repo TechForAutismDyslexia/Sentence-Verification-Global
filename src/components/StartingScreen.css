@@ -48,11 +48,13 @@
 /* Small devices (landscape phones, 576px to 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
   .play-button {
-    font-size: 18px;
+    font-size: 12px;
+    font-weight: 300;
     padding: 10px 20px;
     margin-bottom: 30px;
     height:80px;
     width:140px;
+    margin-top: 250px;
   }
 }
 
