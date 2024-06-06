@@ -39,9 +39,11 @@
 /* Medium devices (tablets, 768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .play-button {
-    font-size: 20px;
-    padding: 12px 25px;
-    margin-bottom: 40px;
+    font-size: 10px;
+    margin-bottom: 10px;
+    height:20px;
+    width:40px;
+    margin-top: 250px;
   }
 }
 
@@ -63,9 +65,8 @@
   .play-button {
     font-size: 16px;
     padding: 8px 16px;
-    margin-bottom: 10px;
-    height:20px;
-    width:40px;
-    margin-top: 250px;
+    margin-bottom: 20px;
+    height:80px;
+    width:140px;
   }
 }
