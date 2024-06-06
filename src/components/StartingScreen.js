@@ -14,7 +14,7 @@ function StartingScreen() {
     >
       <div style={{textAlign:'center', justifyContent:'center', alignItems:'center'}}>
         <Link to="/game">
-          <button className="play-button">Play Game</button>
+          <button className="play-button">Play</button>
         </Link>
         <p style={{color:'red'}}>Please use in Landscape mode</p>
       </div>
