@@ -181,8 +181,15 @@ function Game() {
   const progressPercentage = (currentScreen / totalScreens) * 100;
 
   return (
-    <div className="game-container" style={{ position: 'relative', backgroundImage: `url(./images/background.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <Navbar attempts={attempts} elapsedTime={elapsedTime} currentScreen={currentScreen} totalScreens={totalScreens} />
+    <div className="game-container" style={{ 
+      position: 'relative', 
+      backgroundImage: 'url(./images/background.png)', 
+      backgroundSize: 'cover', 
+      backgroundPosition: 'center', 
+      backgroundRepeat: 'repeat' 
+    }}>
+      {/* Your content here */}
+       <Navbar attempts={attempts} elapsedTime={elapsedTime} currentScreen={currentScreen} totalScreens={totalScreens} />
       {showConfetti && <Confetti />}
 
       {shuffledData.length > 0 && (

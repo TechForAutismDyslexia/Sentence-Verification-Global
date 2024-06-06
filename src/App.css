@@ -39,16 +39,15 @@
 .game-container {
   display: flex;
   margin-top: 60px;
-  padding-top: 50px;
+  padding-top: 50px; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #e490c1, #b926a1);
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
+
 
 .background-image {
   position: absolute;
