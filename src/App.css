@@ -39,16 +39,15 @@
 .game-container {
   display: flex;
   margin-top: 60px;
-  padding-top: 50px; 
+  padding-top: 50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, #e490c1, #b926a1);
   background-size: cover;
-  background-position: center center; /* Center the background image both horizontally and vertically */
-  background-attachment: fixed; /* Optional: May help in ensuring visibility */
+  background-position: center center;
+  background-attachment: fixed;
   background-repeat: repeat-y;
-
 }
 
 .background-image {
@@ -61,12 +60,14 @@
 .sentence {
   margin-bottom: 20px;
 }
+
 .play-again-button {
-  width: 10vw; /* Adjust the width as needed */
+  width: 10vw;
   margin-left: 200px;
   margin-right: 200px;
   margin-bottom: 200px;
 }
+
 .style-container {
   background-color: #67b7ec;
   border: 1px solid #090a0a;
@@ -81,26 +82,23 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
-
 }
 
 .space-between-images {
   width: 40px;
 }
 
-
-
 .heading-in-navbar {
   color: azure;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 300;
 }
 
 .other-text-navbar {
   color: skyblue;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
+
 .image-container {
   position: relative;
 }
@@ -138,7 +136,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 1;
-  margin:10% 30% 10% 30% ;
+  margin: 10% 30% 10% 30%;
 }
 
 .modal-content p {
@@ -181,9 +179,10 @@
 .image-wrapper.red {
   background-color: rgb(230, 82, 82);
 }
+
 .full-width-navbar {
   width: 100%;
-  height:110px;
+  height: 110px;
   position: fixed; /* Fixes the navbar at the top */
   top: 0; /* Positions the navbar at the top of the viewport */
   z-index: 1000; /* Ensures the navbar is above other elements */
@@ -200,7 +199,7 @@
 
 .navbar-logo {
   height: 90px;
-  width:350px; /* Adjust the height to fit your design */
+  width: 350px; /* Adjust the height to fit your design */
 }
 
 .screen-info {
@@ -249,7 +248,7 @@
 
 .transparent-box {
   background-color: rgba(105, 104, 104, 0.26);
-    border-radius: 10px;
+  border-radius: 10px;
   padding: 10px;
   margin-top: 10px;
   margin-left: 40px;
@@ -260,4 +259,117 @@
   height: auto;
   width: 95%;
   flex-direction: row;
+}
+
+/* Responsive styles */
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .game-container {
+    padding-top: 30px;
+    margin-top: 30px;
+  }
+
+  .play-again-button {
+    width: 15vw;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 150px;
+  }
+
+  .modal-content {
+    margin: 10% 20% 10% 20%;
+  }
+
+  .navbar-logo {
+    width: 300px;
+    height: auto;
+  }
+
+  .screen-info {
+    padding: 8px;
+  }
+
+  .other-text-navbar {
+    margin-left: 15px;
+  }
+
+  .transparent-box {
+    margin: 10px 20px;
+    width: 90%;
+  }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .game-container {
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+
+  .play-again-button {
+    width: 20vw;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+  }
+
+  .modal-content {
+    margin: 10% 15% 10% 15%;
+  }
+
+  .navbar-logo {
+    width: 250px;
+    height: auto;
+  }
+
+  .screen-info {
+    padding: 6px;
+  }
+
+  .other-text-navbar {
+    margin-left: 10px;
+  }
+
+  .transparent-box {
+    margin: 10px 15px;
+    width: 85%;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  .game-container {
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
+  .play-again-button {
+    width: 30vw;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+  }
+
+  .modal-content {
+    margin: 10% 10% 10% 10%;
+  }
+
+  .navbar-logo {
+    width: 200px;
+    height: auto;
+  }
+
+  .screen-info {
+    padding: 4px;
+  }
+
+  .other-text-navbar {
+    margin-left: 5px;
+  }
+
+  .transparent-box {
+    margin: 10px 10px;
+    width: 80%;
+  }
 }
