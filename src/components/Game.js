@@ -90,7 +90,7 @@ function Game() {
       setTimeout(() => {
         setFeedbackMessage('');
         setBackgroundColors([]);
-      }, 2000);
+      }, 4000);
     }
     setSelectedImage(chosenImage);
   };
