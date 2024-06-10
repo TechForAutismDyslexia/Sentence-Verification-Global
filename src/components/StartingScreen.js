@@ -8,15 +8,13 @@ function StartingScreen() {
       className="starting-screen"
       style={{
         backgroundImage: `url(/images/startscreen.png)`,
-        backgroundSize: 'contain', // Changed to cover for full background
-        backgroundPosition: 'center'
       }}
     >
-      <div style={{textAlign:'center', justifyContent:'center', alignItems:'center'}}>
+      <div className="starting-screen-text">
         <Link to="/game">
           <button className="play-button">Play</button>
         </Link>
-        <p style={{color:'red'}}>Please use in Landscape mode</p>
+        <p>Please use in Landscape mode</p>
       </div>
     </div>
   );

@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AudioIcon from './AudioIcon'; // Adjust the path as needed
 
-export default function Navbar({ attempts, elapsedTime, currentScreen, totalScreens }) {
+export default function Navbar({ currentScreen, totalScreens }) {
+  const [showInstructions, setShowInstructions] = useState(false);
+  const instructionsText = "Choose the image that best matches the passage."; // Replace with your actual instructions
+
+  const toggleInstructions = () => {
+    setShowInstructions(!showInstructions);
+  };
+
   return (
-    <div className="full-width-navbar">
-      <div className="container-fluid">
-        <img src={`${process.env.PUBLIC_URL}/images/logo1.png`} alt="Logo" className="navbar-logo" />
-        <div className="screen-info">
-          <h5 style={{ margin: 0, display: 'flex', alignItems: 'center',color:'skyblue' }}>
-            Screens: <h2 style={{ margin: '0 0 0 8px',color:'white', fontFamily:'serif'}}>{currentScreen}/{totalScreens}</h2>
-          </h5>
+    <div className='navbar-main'>
+      <h1>Sentence Verification Global</h1>
+      <div className="navbar-screens" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ flex: '1' }}>
+          <h5 style={{ margin: 0, textAlign: 'center' }}>Screens: <span>{currentScreen}/{totalScreens}</span></h5>
         </div>
-        <div className="other-text-navbar">
-          <h3 style={{ color: 'skyblue' }}>Attempts: <span style={{ color: 'white' }}>{attempts}</span></h3>
-          <h3 style={{ color: 'skyblue'}}>Time: <span style={{ color: 'red' }}>{Math.floor(elapsedTime / 1000)}<span style={{ color: 'white' }}> seconds</span></span></h3>
+        <div className="instructions-container" style={{ flex: '1', textAlign: 'right' }}>
+          <button onClick={toggleInstructions} className="instructions-button">Instructions</button>
+          {showInstructions && (
+            <div className="instructions-dropdown">
+              <p>{instructionsText}</p>
+              {/* Add more instructions as needed */}
+            </div>
+          )}
+          <AudioIcon sentence={instructionsText} />
         </div>
       </div>
     </div>
