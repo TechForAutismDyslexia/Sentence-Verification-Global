@@ -42,12 +42,7 @@
     height: 100%;
   }
 
-  .play-again-button {
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+
   .instructions-container {
     display: flex;
     align-items: center;
@@ -147,13 +142,14 @@
 .play-again-button {
   padding: 10px 20px;
   font-size: 1rem;
-  margin-top: 20px;
+  margin-top: '2vh';
   cursor: pointer;
   background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  width:'5vh'
 }
 
 .play-again-button:hover {
