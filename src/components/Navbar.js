@@ -11,7 +11,7 @@ export default function Navbar({ currentScreen, totalScreens }) {
 
   return (
     <div className='navbar-main'>
-      <h1>Sentence Verification Global</h1>
+      <h1>SENTENCE   VERIFICATION -  GLOBAL</h1>
       <div className="navbar-screens" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ flex: '1' }}>
           <h5 style={{ margin: 0, textAlign: 'center' }}>Screens: <span>{currentScreen}/{totalScreens}</span></h5>

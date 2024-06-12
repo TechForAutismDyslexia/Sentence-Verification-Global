@@ -47,6 +47,7 @@
 }
 
 
+
 .background-image {
   position: absolute;
   display: flex;
@@ -69,101 +70,6 @@
 
 
 
-.space-between-images {
-  width: 40px;
-}
-
-.heading-in-navbar {
-  color: azure;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 300;
-}
-
-.other-text-navbar {
-  color: skyblue;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap}
-
-.image-container:hover {
-  cursor: pointer;
-}
-
-.image-wrapper {
-  display: inline-block;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background-color: transparent; /* default background color */
-  transition: background-color 0.3s ease-in-out;
-}
-
-.image-wrapper:hover {
-  background-color: black;
-  cursor: pointer;
-}
-
-.image-wrapper.green {
-  background-color: rgb(77, 211, 77);
-}
-
-.image-wrapper.red {
-  background-color: rgb(230, 82, 82);
-}
-
-.full-width-navbar {
-  width: 100%;
-  height: 110px;
-  position: fixed; /* Fixes the navbar at the top */
-  top: 0; /* Positions the navbar at the top of the viewport */
-  z-index: 1000; /* Ensures the navbar is above other elements */
-  background-color: black; /* Sets the background color to black */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.container-fluid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.navbar-logo {
-  height: 90px;
-  width: 350px; /* Adjust the height to fit your design */
-}
-
-.screen-info {
-  display: flex;
-  align-items: center;
-  color: white;
-  border: 1px solid white;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.screen-info h5 {
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-
-.screen-info h5 h2 {
-  margin-left: 8px;
-}
-
-.other-text-navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
-  margin-left: 20px;
-}
-
 .progress-bar-container {
   width: 100%;
   margin-left: '2vw';
@@ -174,19 +80,21 @@
   overflow: hidden;
   margin-top: 2%;
   margin-bottom: 2%;
+  border: 1px solid black;
+
   /* Ensures the progress bar is confined within the container */
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #76c7c0;
+  background-color: #85600f9e;
   transition: width 0.5s ease;
   border-radius: 5px 0 0 5px; /* Smooth edges on the left side */
 }
 
 .transparent-box {
   background-color: rgba(105, 104, 104, 0.26);
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 5px;
   margin-left: 40px;
   margin-right: 40px;
@@ -196,9 +104,6 @@
   width: 95%;
   flex-direction: row;
   margin-top:'0.5vh';
+  margin-bottom:10px;
 }
 
-.image-wrapper img {
-  max-width: 100%; /* Ensures the image will not overflow the wrapper */
-  height: auto; /* Maintains the aspect ratio */
-}

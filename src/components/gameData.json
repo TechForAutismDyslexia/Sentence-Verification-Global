@@ -20,13 +20,13 @@
   {
     "screen": 4,
     "images": ["4_a.png", "4_b.png","4_c.png"],
-    "sentence": "Gerry moved faster and faster over the icy surface. He love to feel the cold breeze on his face. Once more around and he would win this race for sure.",
+    "sentence": "Gerry moved faster and faster over the icy surface. He loves to feel the cold breeze on his face. Once more around and he would win this race for sure.",
     "correctAnswer": "4_c.png"
   },
   {
     "screen": 5,
     "images": ["5_a.png", "5_b.png"],
-    "sentence": "Beverly was puzzle as the sailboats padded by.  They looked like they had huge ballons tied to their masts. She wondered if they might start to float above the water.",
+    "sentence": "Beverly was puzzle as the sailboats padded by. They looked like they had huge ballons tied to their masts. She wondered if they might start to float above the water.",
     "correctAnswer": "5_a.png"
   },
   {

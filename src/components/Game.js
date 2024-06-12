@@ -70,7 +70,7 @@ function Game() {
       setShowConfetti(true);
       setFeedbackMessage('Correct');
       const newBackgroundColors = shuffledData[currentLevel].images.map((_, i) =>
-        i === correctAnswer ? 'correct-blink' : 'transparent'
+        i === index ? 'green' : 'transparent'
       );
       setBackgroundColors(newBackgroundColors);
       setShowNextButton(true);
@@ -82,9 +82,9 @@ function Game() {
         }, 4000);
       }
     } else {
-      setFeedbackMessage('Incorrect');
+      setFeedbackMessage('Please, Try Again..');
       const newBackgroundColors = shuffledData[currentLevel].images.map((_, i) =>
-        i === index ? 'incorrect-blink' : 'transparent'
+        i === index ? 'red' : 'transparent'
       );
       setBackgroundColors(newBackgroundColors);
       setTimeout(() => {
@@ -128,10 +128,10 @@ function Game() {
 
   if (gameCompleted) {
     return (
-      <SummaryScreen 
-        totalAttempts={attempts} 
-        totalElapsedTime={completionTime} 
-        handlePlayAgain={handlePlayAgain} 
+      <SummaryScreen
+        totalAttempts={attempts}
+        totalElapsedTime={completionTime}
+        handlePlayAgain={handlePlayAgain}
       />
     );
   }
@@ -150,20 +150,20 @@ function Game() {
         <>
           <ProgressBar progressPercentage={progressPercentage} />
 
-          <div className="transparent-box">
-            <AudioIcon sentence={shuffledData[currentLevel].sentence} />
+          <div className="transparent-box" style={{ boxShadow: '3px 4px 2px black' }}>
+  <AudioIcon sentence={shuffledData[currentLevel].sentence} />
+  <div className="sentence" style={{ textAlign: 'center', fontFamily: 'sans-serif', width: '100%' }}>
+    {shuffledData[currentLevel].sentence}
+  </div>
+</div>
 
-            <div className="sentence" style={{ textAlign: 'center', fontFamily:'sans-serif', width: '100%' }}>
-              {shuffledData[currentLevel].sentence}
-            </div>
-          </div>
-
-          {feedbackMessage && (
-            <div className="feedback-message" style={{ textAlign: 'center', fontSize: '1.1rem', marginBottom: '0.5vh', color: feedbackMessage === 'Correct' ? 'green' : 'red' }}>
-              {feedbackMessage}
-            </div>
-          )}
-
+<div className="outer-container" style={{ backgroundColor: 'rgba(9, 132, 227, 0.5)', padding: '2%', borderRadius: '20px', marginTop: '0.5vh', width: '95%', border: '1px solid #0984e3', boxShadow: '6px 5px 4px #0076a3' }}>
+  {feedbackMessage && (
+    <div className="feedback-message" style={{ textAlign: 'center', fontSize: '1.1rem', marginBottom: '0.5vh', backgroundColor: feedbackMessage === 'Correct' ? 'green' : 'red' }}>
+      {feedbackMessage}
+    </div>
+  )}
+  <div>
           <ImageGrid
             images={shuffledData[currentLevel].images}
             screen={shuffledData[currentLevel].screen}
@@ -173,9 +173,13 @@ function Game() {
 
           {showNextButton && currentLevel < shuffledData.length - 1 && (
             <div style={{ textAlign: 'center', marginTop: '1vh' }}>
-              <button onClick={handleNextButtonClick} className="next-button">Next</button>
+              <button onClick={handleNextButtonClick} className="pushable"> <span class="front">
+                Next
+              </span></button>
             </div>
           )}
+          </div>
+          </div>
         </>
       )}
     </div>

@@ -1,157 +1,220 @@
-.game-container {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  
 
 
-  .sentence {
-    text-align: center;
-    font-size: 1.1rem;
-    font-family: fantasy;
-    width: 100%;
-    margin-left: 2vw;
-  }
-  .images-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .image-wrapper {
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Updated width and height if necessary, but it is now inline */
-  }
-  
-  img {
-    /* Ensuring images fit their containers */
-    width: 100%;
-    height: 100%;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+}
 
 
-  .instructions-container {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
+
+
+.sentence {
+  text-align: center;
+  font-size: 1.1rem;
+  font-family: fantasy;
+  width: 98%;
+  margin-left: 2vw;
+}
+
+
+.pushable {
+  background: hsl(227, 74%, 63%);
+  border-radius: 15px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.front {
+  display: block;
+  padding: 6px 25px;
+  border-radius: 15px;
+  font-size: 1.25rem;
+  background: hsl(224, 82%, 49%);
+  color: white;
+  transform: translateY(-6px);
+
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
+
+
+.space-between-images {
+  width: 40px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap
+}
+
+.image-container:hover {
+  cursor: pointer;
+}
+
+
+.image-wrapper:hover {
+  background-color: rgb(12, 12, 12);
+  cursor: pointer;
+}
+
+.image-wrapper.green {
+  background-color: rgb(77, 211, 77);
+}
+
+.image-wrapper.red {
+  background-color: rgba(211, 16, 16, 0.829);
+}
+
+.image-wrapper {
+  margin: 10px;
+  display: flex;
+  padding:4px;
+  background-color: #0861b47e;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  /* Updated width and height if necessary, but it is now inline */
+}
+
+img {
+  /* Ensuring images fit their containers */
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+
+.instructions-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.instructions-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: hsl(224, 82%, 49%);
+  border: none;
+  border-radius: 5px;
+  color: rgb(245, 242, 242);
+}
+
+.instructions-dropdown {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 200px;
+  z-index: 1;
+  text-align: center;
+}
+
+.audio-icon {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 24px; /* Adjust size as needed */
+  color: #38b6ff;
+}
+
+.audio-icon:hover {
+  color: #1485ee;
+}
+
+.navbar-screens {
+  display:flex;
+  flex-direction:row;
+}
+.correct-blink {
   
-  .instructions-button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-    background-color: #38b6ff;
-    border: none;
-    border-radius: 5px;
-    color: white;
+  animation: correctBlink 1s infinite;
+  background-color: #45a049;
+  border: 2px;
+}
+
+.incorrect-blink {
+  animation: incorrectBlink 1s infinite;
+}
+
+@keyframes correctBlink {
+  0%, 100% {
+    border-color: transparent;
   }
-  
-  .instructions-dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    width: 200px;
-    z-index: 1;
-    text-align: center;
+  50% {
+    border-color: green;
   }
-  
-  .audio-icon {
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 24px; /* Adjust size as needed */
-    color: #38b6ff;
+}
+
+@keyframes incorrectBlink {
+  0%, 100% {
+    border-color: transparent;
   }
-  
-  .audio-icon:hover {
-    color: #1485ee;
+  50% {
+    border-color: rgba(128, 10, 10, 0.596);
   }
-  
-  .navbar-screens {
-    display:flex;
-    flex-direction:row;
-  }
-  .correct-blink {
-    animation: correctBlink 1s infinite;
-  }
-  
-  .incorrect-blink {
-    animation: incorrectBlink 1s infinite;
-  }
-  
-  @keyframes correctBlink {
-    0%, 100% {
-      border-color: transparent;
-    }
-    50% {
-      border-color: green;
-    }
-  }
-  
-  @keyframes incorrectBlink {
-    0%, 100% {
-      border-color: transparent;
-    }
-    50% {
-      border-color: red;
-    }
-  }
-  
+}
+
 .feedback-message {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: '0.5vh';
+font-size: 1.2rem;
+font-weight: bold;
+margin-top: '0.5vh';
+color:white;
+  cursor: pointer;
+  background-color: hsl(224, 82%, 49%);
+  border: 1px solid black;
+  border-radius: 5px;
+margin-left: 31vw;
+margin-right: 31vw;
+padding-left: 2px;
+
+
+
 }
 
 /* Add styles for the summary screen */
 .summary-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #f9f9f9;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: #f9f9f9;
 }
 
 .summary-heading {
-  font-size: 2rem;
-  margin-bottom: 20px;
+font-size: 2rem;
+margin-bottom: 20px;
 }
 
 .summary-details {
-  font-size: 1.2rem;
+font-size: 1.2rem;
 }
 
 .play-again-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-top: '2vh';
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  width:'5vh'
+padding: 10px 20px;
+font-size: 1rem;
+margin-top: '2vh';
+cursor: pointer;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+width:'5vh'
 }
 
 .play-again-button:hover {
-  background-color: #45a049;
+background-color: #45a049;
 }
