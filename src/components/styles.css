@@ -13,9 +13,9 @@
 .sentence {
   text-align: center;
   font-size: 1.1rem;
-  font-family: fantasy;
   width: 98%;
   margin-left: 2vw;
+  font-weight: bold;
 }
 
 
@@ -45,9 +45,7 @@
 }
 
 
-.space-between-images {
-  width: 40px;
-}
+
 
 .image-container {
   display: flex;
@@ -74,13 +72,15 @@
 }
 
 .image-wrapper {
-  margin: 10px;
+  margin: 5px;
   display: flex;
   padding:4px;
   background-color: #0861b47e;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
+  height: 100%;
+  width:50%;
   /* Updated width and height if necessary, but it is now inline */
 }
 
@@ -142,10 +142,14 @@ img {
   animation: correctBlink 1s infinite;
   background-color: #45a049;
   border: 2px;
+  color: #45a049;
 }
 
 .incorrect-blink {
   animation: incorrectBlink 1s infinite;
+  color: rgb(143, 10, 10);
+  border: 2px;
+
 }
 
 @keyframes correctBlink {
@@ -162,7 +166,7 @@ img {
     border-color: transparent;
   }
   50% {
-    border-color: rgba(128, 10, 10, 0.596);
+    border-color: rgba(192, 15, 15, 0.596);
   }
 }
 
@@ -170,15 +174,14 @@ img {
 font-size: 1.2rem;
 font-weight: bold;
 margin-top: '0.5vh';
-color:white;
   cursor: pointer;
-  background-color: hsl(224, 82%, 49%);
+  color: black;
   border: 1px solid black;
   border-radius: 5px;
-margin-left: 31vw;
-margin-right: 31vw;
+margin-left: 30%;
+margin-right: 30%;
 padding-left: 2px;
-
+text-align: center;
 
 
 }
@@ -217,4 +220,13 @@ width:'5vh'
 
 .play-again-button:hover {
 background-color: #45a049;
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* Use 600 or 700 for a bolder look */
+  color: #333; /* Choose a color that suits your design */
+  text-align: center;
+  margin-bottom: 1%;
+
 }

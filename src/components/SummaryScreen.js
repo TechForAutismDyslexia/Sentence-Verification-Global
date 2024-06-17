@@ -12,13 +12,15 @@ const SummaryScreen = ({ totalAttempts, totalElapsedTime, handlePlayAgain }) => 
       backgroundRepeat: 'repeat'
     }}>
       <h1 className="summary-heading" style={{ textAlign: 'center', fontFamily: 'fantasy' }}>Sentence Verification Global</h1>
-      <h3 className="summary-heading" style={{ textAlign: 'center', fontFamily:'sans-serif', textDecoration: 'UnderLine', fontWeight:'bold'}}>Stats</h3>
+      {/* <h3 className="summary-heading" style={{ textAlign: 'center', fontFamily:'sans-serif', textDecoration: 'UnderLine', fontWeight:'bold'}}>Stats</h3>
 
       <div className="summary-details" style={{ textAlign: 'center', marginTop: '20px' }}>
         <p>Total Attempts: {totalAttempts}</p>
-        <p>Time Taken: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} minutes</p>
+        <p>Time Taken: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} minutes</p> */}
+        <h3>CONGRATULATIONS...!!</h3>
+        <h3>YOU HAVE COMPLETED THE GAME</h3>
+
         <button onClick={handlePlayAgain} className="play-again-button">Play Again</button>
-      </div>
     </div>
   );
 };
