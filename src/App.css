@@ -45,6 +45,9 @@
   background-position: center center;
   background-repeat: repeat;
 }
+body{
+  overflow-x : hidden;
+}
 
 
 

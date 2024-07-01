@@ -1,4 +1,5 @@
 import React from 'react';
+import audio_icon from "../assets/images/audio-icon.png"
 
 const AudioIcon = ({ sentence }) => {
   const speakText = (text) => {
@@ -8,8 +9,8 @@ const AudioIcon = ({ sentence }) => {
 
   return (
     <img
-      src={`${process.env.PUBLIC_URL}/images/audio-icon.png`}
-      alt="audio icon"
+    src={audio_icon}
+    alt="audio icon"
       onClick={() => speakText(sentence)}
       style={{ width: '30px', height: '30px', cursor: 'pointer', marginLeft: '10px' }}
     />

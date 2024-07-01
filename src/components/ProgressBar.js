@@ -18,8 +18,8 @@ import './styles.css';
 
 const ProgressBar = ({ progressPercentage }) => {
   return (
-    <div className="progress-bar-container">
-      <div className="progress">
+    <div className="progress-bar-container display d-flex col-10">
+      <div className="progress display d-flex col-10">
         <div
           className="progress-bar progress-bar-striped"
           role="progressbar"

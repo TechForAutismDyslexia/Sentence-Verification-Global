@@ -52,7 +52,7 @@ export default function Navbar({ currentScreen, totalScreens }) {
           <h5 style={{color:"black"}}>Screens: <span>{currentScreen}/{totalScreens}</span></h5>
         </div>
         <div className="instructions-container position-relative">
-          <button onClick={toggleInstructions} className="instructions-button btn btn-primary">Instructions</button>
+          <button onClick={toggleInstructions} className="instructions-button btn btn-primary btn-sm mx-3">Instructions</button>
           {showInstructions && (
             <div className="instructions-dropdown p-3 bg-white text-dark rounded">
               <p>{instructionsText}</p>

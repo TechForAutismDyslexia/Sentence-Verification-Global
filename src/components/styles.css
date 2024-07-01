@@ -26,8 +26,6 @@
   padding: 0;
   cursor: pointer;
   outline-offset: 4px;
-  margin-top: 5px;
-  margin-bottom: 0;
 }
 .front {
   display: block;
@@ -99,8 +97,8 @@ img {
 }
 
 .instructions-button {
-  margin-left: 10px;
-  padding: 5px 10px;
+  /* margin-left: 10px;
+  padding: 5px 10px; */
   cursor: pointer;
   background-color: hsl(224, 82%, 49%);
   border: none;
@@ -173,7 +171,6 @@ img {
 .feedback-message {
 font-size: 1.2rem;
 font-weight: bold;
-margin-top: '0.5vh';
   cursor: pointer;
   color: black;
   border: 1px solid black;
