@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useEffect,useRef } from 'react';
+import {Link}  from "react-router-dom"
 const SummaryScreen = ({ totalAttempts, totalElapsedTime, handlePlayAgain }) => {
   const timer = Math.floor(totalElapsedTime / 1000);
   const gameId = "10"
@@ -36,8 +37,10 @@ const SummaryScreen = ({ totalAttempts, totalElapsedTime, handlePlayAgain }) => 
       </div> */}
         <h3>CONGRATULATIONS...!!</h3>
         <h3>YOU HAVE COMPLETED THE GAME</h3>
+          <Link to="https://joywithlearning.com/games">
+          <button className="play-again-button">Home Page</button>
 
-        <button onClick={handlePlayAgain} className="play-again-button">Play Again</button>
+          </Link>
       </div>
     );
   };
