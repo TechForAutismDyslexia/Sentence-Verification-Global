@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect,useRef } from 'react';
 import {Link}  from "react-router-dom"
-const SummaryScreen = ({ totalAttempts, totalElapsedTime, handlePlayAgain }) => {
+const SummaryScreen = ({ totalAttempts, totalElapsedTime }) => {
   const timer = Math.floor(totalElapsedTime / 1000);
   const gameId = "10"
   const tries = totalAttempts;
@@ -31,10 +31,7 @@ const SummaryScreen = ({ totalAttempts, totalElapsedTime, handlePlayAgain }) => 
         <h1 className="summary-heading" style={{ textAlign: 'center', fontFamily: 'fantasy' }}>Sentence Verification Global</h1>
         <h3 className="summary-heading" style={{ textAlign: 'center', fontFamily: 'sans-serif', textDecoration: 'UnderLine', fontWeight: 'bold' }}>Stats</h3>
 
-        {/* <div className="summary-details" style={{ textAlign: 'center', marginTop: '20px' }}>
-        <p>Total Attempts: {totalAttempts}</p>
-        <p>Time Taken: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} minutes</p>
-      </div> */}
+     
         <h3>CONGRATULATIONS...!!</h3>
         <h3>YOU HAVE COMPLETED THE GAME</h3>
           <Link to="https://joywithlearning.com/games">

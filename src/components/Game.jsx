@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import gameData from './gameData.json';
-import ConfettiComponent from './ConfettiComponent';
+import gameData from '../assets/gameData.json';
 import Navbar from './Navbar';
 import ProgressBar from './ProgressBar';
 import ImageGrid from './ImageGrid';
@@ -9,6 +8,8 @@ import AudioIcon from './AudioIcon';
 import SummaryScreen from './SummaryScreen';
 import './styles.css';
 import '../App.css';
+import Confetti from 'react-confetti';
+
 
 function Game() {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -26,12 +27,10 @@ function Game() {
   const totalScreens = shuffledData.length;
   const [gameCompleted, setGameCompleted] = useState(false);
 
-  // Utility function to shuffle an array
   const shuffleArray = (array) => {
     return array.slice().sort(() => Math.random() - 0.5);
   };
 
-  // Shuffle game data on component mount
   useEffect(() => {
     const shuffleData = () => {
       const shuffled = gameData.map(item => {
@@ -44,7 +43,6 @@ function Game() {
     setStartTime(Date.now());
   }, []);
 
-  // Reset game state when moving to the next level
   useEffect(() => {
     setSelectedImage(null);
     setBackgroundColors([]);
@@ -52,7 +50,6 @@ function Game() {
     setFeedbackMessage('');
   }, [currentLevel]);
 
-  // Update elapsed time every second
   useEffect(() => {
     let interval;
     if (startTime !== null) {
@@ -141,7 +138,7 @@ function Game() {
   return (
     <div className="game-container" style={{ position: 'relative' }}>
       <Navbar attempts={attempts} elapsedTime={elapsedTime} currentScreen={currentScreen} totalScreens={totalScreens} />
-      {showConfetti && <ConfettiComponent />}
+      {showConfetti && <Confetti />}
 
       {shuffledData.length > 0 && (
         <>

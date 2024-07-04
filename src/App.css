@@ -85,14 +85,13 @@ body{
   margin-bottom: 1%;
   border: 1px solid black;
 
-  /* Ensures the progress bar is confined within the container */
 }
 
 .progress-bar {
   height: 100%;
   background-color: #85600f9e;
   transition: width 0.5s ease;
-  border-radius: 5px 0 0 5px; /* Smooth edges on the left side */
+  border-radius: 5px 0 0 5px; 
 }
 
 .transparent-box {
