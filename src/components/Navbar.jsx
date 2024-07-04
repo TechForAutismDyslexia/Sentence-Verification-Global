@@ -14,13 +14,13 @@ export default function Navbar({ currentScreen, totalScreens }) {
 
   return (
     <div style={{backgroundColor:"white"}}>
-      <h1 className="heading" style={{textAlign:'center'}}>SENTENCE VERIFICATION - GLOBAL</h1>
-      <div className="navbar-screens d-flex justify-content-between align-items-center w-100">
+      <h2 className="heading" style={{textAlign:'center'}}>SENTENCE VERIFICATION GLOBAL</h2>
+      <div className="navbar-screens d-flex justify-content-around align-items-center w-100">
         <div>
           <h5 style={{color:"black"}}>Screens: <span>{currentScreen}/{totalScreens}</span></h5>
         </div>
         <div className="instructions-container position-relative">
-          <button onClick={toggleInstructions} className="instructions-button btn btn-primary btn-sm mx-3">Instructions</button>
+          <button onClick={toggleInstructions} className="instructions-button btn btn-primary btn-sm mx-1">Instructions</button>
           {showInstructions && (
             <div className="instructions-dropdown p-3 bg-white text-dark rounded">
               <p>{instructionsText}</p>

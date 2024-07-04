@@ -154,7 +154,7 @@ function Game() {
           <div className={`text-center ${feedbackMessage === 'Correct' ? 'correct-blink' :
           feedbackMessage === 'Please, Try Again..' ? 'incorrect-blink':'transparent'}`}
 
-          style={{ backgroundColor: 'rgba(9, 132, 227, 0.5)',padding: '1%', borderRadius: '20px', marginTop: '0.5vh', width: '95%', border: '5px solid #0984e3', boxShadow: '6px 5px 4px #0076a3' }}>
+          style={{ backgroundColor: 'rgba(9, 132, 227, 0.5)',padding: '1%', borderRadius: '20px', width: '95%', border: '3px solid #0984e3', boxShadow: '6px 5px 4px #0076a3' }}>
             {feedbackMessage && (
               <div className='feedback-message mt-0' style={{backgroundColor: feedbackMessage === 'Correct' ? 'green' : '#d63031'}}>
                 {feedbackMessage}

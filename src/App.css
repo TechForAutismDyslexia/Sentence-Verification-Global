@@ -47,6 +47,7 @@
 }
 body{
   overflow-x : hidden;
+  
 }
 
 
@@ -108,4 +109,9 @@ body{
   margin-top:'0.5vh';
   margin-bottom:1%;
 }
-
+@media (min-width: 992px) {
+  body{
+    overflow-y : hidden;
+    
+  }
+}
