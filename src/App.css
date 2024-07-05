@@ -47,6 +47,7 @@
 }
 body{
   overflow-x : hidden;
+  
 }
 
 
@@ -74,7 +75,7 @@ body{
 
 
 .progress-bar-container {
-  width: 100%;
+  width: 90%;
   margin-left: '2vw';
   margin-right: '2vh';
   height: 1vh;
@@ -85,14 +86,13 @@ body{
   margin-bottom: 1%;
   border: 1px solid black;
 
-  /* Ensures the progress bar is confined within the container */
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #85600f9e;
+  background-color: #2c52fc9e;
   transition: width 0.5s ease;
-  border-radius: 5px 0 0 5px; /* Smooth edges on the left side */
+  border-radius: 5px 0 0 5px; 
 }
 
 .transparent-box {
@@ -109,4 +109,9 @@ body{
   margin-top:'0.5vh';
   margin-bottom:1%;
 }
-
+@media (min-width: 992px) {
+  body{
+    overflow-y : hidden;
+    
+  }
+}

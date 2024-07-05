@@ -12,7 +12,7 @@ const AudioIcon = ({ sentence }) => {
     src={audio_icon}
     alt="audio icon"
       onClick={() => speakText(sentence)}
-      style={{ width: '30px', height: '30px', cursor: 'pointer', marginLeft: '10px' }}
+      style={{ width: '30px', height: '30px', cursor: 'pointer', marginLeft: '0.5vw' }}
     />
   );
 };

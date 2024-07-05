@@ -1,8 +1,18 @@
+
+
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-const ImageGrid = ({ images, screen, backgroundColors, handleChoice, shadowColor = '#0076a3', shadowOffset = { x: 6, y: 5 }, shadowRadius = 4 }) => {
+const ImageGrid = ({
+  images,
+  screen,
+  backgroundColors,
+  handleChoice,
+  shadowColor = '#0076a3',
+  shadowOffset = { x: 6, y: 5 },
+  shadowRadius = 4,
+}) => {
   const [imageSources, setImageSources] = useState({});
 
   useEffect(() => {
@@ -24,18 +34,24 @@ const ImageGrid = ({ images, screen, backgroundColors, handleChoice, shadowColor
   }, [images, screen]);
 
   return (
-    <div className="container d-flex align-items-center md-2">
-      <div className="d-flex justify-content-center" style={{ marginLeft: '12%', marginRight: '10%' }}>
+    <div className="container">
+      <div className="row justify-content-center">
         {images.map((image, index) => (
-          <div key={index} className="col-md-4 col-s-2 d-flex justify-content-center " style={{ gap: '20px' }}>
+          <div
+            key={index}
+            className="col-6 col-sm-4 col-md-3 d-flex justify-content-center mb-2"
+          >
             <div
               className="image-wrapper"
               style={{
                 backgroundColor: backgroundColors[index],
                 boxShadow: `${shadowOffset.x}px ${shadowOffset.y}px ${shadowRadius}px ${shadowColor}`,
                 cursor: 'pointer',
+                aspectRatio: '1',
+                width: '80%', 
+                maxWidth: '150px', 
                 borderRadius: '15px',
-                overflow: 'hidden'
+                overflow: 'hidden',
               }}
               onClick={() => handleChoice(image, index)}
             >
@@ -43,7 +59,7 @@ const ImageGrid = ({ images, screen, backgroundColors, handleChoice, shadowColor
                 <img
                   src={imageSources[image]}
                   alt={`img ${index + 1}`}
-                  style={{ width: '100%', height: '100%' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'stretch' }}
                 />
               )}
             </div>
