@@ -1,15 +1,11 @@
-
-
-import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
+import { useEffect, useState } from "react";
 
 const ImageGrid = ({
   images,
   screen,
   backgroundColors,
   handleChoice,
-  shadowColor = '#0076a3',
+  shadowColor = "#0076a3",
   shadowOffset = { x: 6, y: 5 },
   shadowRadius = 4,
 }) => {
@@ -17,7 +13,9 @@ const ImageGrid = ({
 
   useEffect(() => {
     const loadImage = async (imageName) => {
-      const image = await import(`../assets/images/screen_${screen}_imgs/${imageName}`);
+      const image = await import(
+        `../assets/images/screen_${screen}_imgs/${imageName}`
+      );
       return image.default;
     };
 
@@ -34,32 +32,23 @@ const ImageGrid = ({
   }, [images, screen]);
 
   return (
-    <div className="container">
+    <div className="container  py-4">
       <div className="row justify-content-center">
         {images.map((image, index) => (
           <div
             key={index}
-            className="col-6 col-sm-4 col-md-3 d-flex justify-content-center mb-2"
+            className="col-6 col-sm-4 col-md-3 mb-3 d-flex justify-content-center"
           >
             <div
-              className="image-wrapper"
-              style={{
-                backgroundColor: backgroundColors[index],
-                boxShadow: `${shadowOffset.x}px ${shadowOffset.y}px ${shadowRadius}px ${shadowColor}`,
-                cursor: 'pointer',
-                aspectRatio: '1',
-                width: '80%', 
-                maxWidth: '150px', 
-                borderRadius: '15px',
-                overflow: 'hidden',
-              }}
+              className={`bg-light shadow-sm rounded position-relative w-100`}
+              style={{ paddingTop: "100%", cursor: "pointer" }}
               onClick={() => handleChoice(image, index)}
             >
               {imageSources[image] && (
                 <img
                   src={imageSources[image]}
                   alt={`img ${index + 1}`}
-                  style={{ width: '100%', height: '100%', objectFit: 'stretch' }}
+                  className="img-fluid rounded position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
                 />
               )}
             </div>

@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import  { useState } from "react";
 const Pagination = ({ totalScreens = 8 }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -9,25 +7,23 @@ const Pagination = ({ totalScreens = 8 }) => {
   };
 
   return (
-    <nav aria-label="Page navigation">
+    <nav aria-label="Page navigation" className="my-3">
       <ul className="pagination pagination-sm justify-content-center">
         {[...Array(totalScreens).keys()].map((_, index) => {
           const pageNumber = index + 1;
           return (
             <li
               key={pageNumber}
-              className={`page-item ${pageNumber === currentPage ? 'active' : ''}`}
+              className={`page-item ${
+                pageNumber === currentPage ? "active" : ""
+              }`}
             >
-              <a
+              <button
                 className="page-link"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handlePageClick(pageNumber);
-                }}
+                onClick={() => handlePageClick(pageNumber)}
               >
                 {pageNumber}
-              </a>
+              </button>
             </li>
           );
         })}

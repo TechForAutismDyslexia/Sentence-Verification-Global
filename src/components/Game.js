@@ -1,15 +1,12 @@
-
-import React, { useState, useEffect } from 'react';
-import gameData from '../assets/gameData.json';
-import Navbar from './Navbar';
-import ProgressBar from './ProgressBar';
-import ImageGrid from './ImageGrid';
-import AudioIcon from './AudioIcon';
-import SummaryScreen from './SummaryScreen';
-import './styles.css';
-import '../App.css';
-import Confetti from 'react-confetti';
-
+import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
+import ProgressBar from "./ProgressBar";
+import ImageGrid from "./ImageGrid";
+import AudioIcon from "./AudioIcon";
+import SummaryScreen from "./SummaryScreen";
+import "../App.css";
+import Confetti from "react-confetti";
+import axios from "axios";
 
 function Game() {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -23,7 +20,7 @@ function Game() {
   const [completionTime, setCompletionTime] = useState(null);
   const [showNextButton, setShowNextButton] = useState(false);
   const [currentScreen, setCurrentScreen] = useState(1);
-  const [feedbackMessage, setFeedbackMessage] = useState('');
+  const [feedbackMessage, setFeedbackMessage] = useState("");
   const totalScreens = shuffledData.length;
   const [gameCompleted, setGameCompleted] = useState(false);
 
@@ -32,22 +29,35 @@ function Game() {
   };
 
   useEffect(() => {
-    const shuffleData = () => {
-      const shuffled = gameData.map(item => {
-        const shuffledImages = shuffleArray(item.images);
-        return { ...item, images: shuffledImages };
-      });
-      setShuffledData(shuffled);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.joywithlearning.com/api/sentenceverificationglobal/game-data"
+        );
+        const shuffled = response.data.map((item) => {
+          const shuffledImages = shuffleArray(item.images);
+          return { ...item, images: shuffledImages };
+        });
+        setShuffledData(shuffled);
+        setStartTime(Date.now());
+      } catch (error) {
+        console.error("Error fetching game data:", error);
+      }
     };
-    shuffleData();
-    setStartTime(Date.now());
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFeedbackMessage((prevMsg) => (prevMsg === "Correct" ? "Correct" : ""));
+    }, 3000);
+  }, [feedbackMessage]);
 
   useEffect(() => {
     setSelectedImage(null);
     setBackgroundColors([]);
     setShowConfetti(false);
-    setFeedbackMessage('');
+    setFeedbackMessage("");
   }, [currentLevel]);
 
   useEffect(() => {
@@ -67,9 +77,9 @@ function Game() {
     const correctAnswer = shuffledData[currentLevel].correctAnswer;
     if (chosenImage === correctAnswer) {
       setShowConfetti(true);
-      setFeedbackMessage('Correct');
-      const newBackgroundColors = shuffledData[currentLevel].images.map((_, i) =>
-        i === index ? 'green' : 'transparent'
+      setFeedbackMessage("Correct");
+      const newBackgroundColors = shuffledData[currentLevel].images.map(
+        (_, i) => (i === index ? "green" : "transparent")
       );
       setBackgroundColors(newBackgroundColors);
       setShowNextButton(true);
@@ -81,13 +91,13 @@ function Game() {
         }, 4000);
       }
     } else {
-      setFeedbackMessage('Please, Try Again..');
-      const newBackgroundColors = shuffledData[currentLevel].images.map((_, i) =>
-        i === index ? '#d63031' : 'transparent'
+      setFeedbackMessage("Please, Try Again..");
+      const newBackgroundColors = shuffledData[currentLevel].images.map(
+        (_, i) => (i === index ? "#d63031" : "transparent")
       );
       setBackgroundColors(newBackgroundColors);
       setTimeout(() => {
-        setFeedbackMessage('');
+        setFeedbackMessage("");
         setBackgroundColors([]);
       }, 2000);
     }
@@ -136,30 +146,42 @@ function Game() {
   }
 
   return (
-    <div className="game-container" style={{ position: 'relative' }}>
-      <Navbar attempts={attempts} elapsedTime={elapsedTime} currentScreen={currentScreen} totalScreens={totalScreens} />
+    <div
+      className="game-container position-relative"
+      style={{
+        minHeight: "100vh",
+        backgroundImage: "linear-gradient(to bottom right, #a4a6f0, #73aaff)",
+      }}
+    >
+      <Navbar
+        attempts={attempts}
+        elapsedTime={elapsedTime}
+        currentScreen={currentScreen}
+        totalScreens={totalScreens}
+      />
+
       {showConfetti && <Confetti />}
 
       {shuffledData.length > 0 && (
         <>
           <ProgressBar progressPercentage={progressPercentage} />
 
-          <div className="transparent-box">
+          <div className="p-3 bg-transparent rounded">
             <AudioIcon sentence={shuffledData[currentLevel].sentence} />
-            <div className="sentence">
+            <div className="text-center fs-4 fw-bold">
               {shuffledData[currentLevel].sentence}
             </div>
           </div>
 
-          <div className={`text-center ${feedbackMessage === 'Correct' ? 'correct-blink' :
-          feedbackMessage === 'Please, Try Again..' ? 'incorrect-blink':'transparent'}`}
-
-          style={{ backgroundColor: 'rgba(9, 132, 227, 0.5)',padding: '1%', borderRadius: '20px', width: '95%', border: '3px solid #0984e3', boxShadow: '6px 5px 4px #0076a3' }}>
-            {feedbackMessage && (
-              <div className='feedback-message mt-0' style={{backgroundColor: feedbackMessage === 'Correct' ? 'green' : '#d63031'}}>
-                {feedbackMessage}
-              </div>
-            )}
+          <div
+            className={`text-center p-3 rounded-3 w-75 shadow-lg mx-auto ${
+              feedbackMessage === "Correct"
+                ? "bg-success bg-opacity-50"
+                : feedbackMessage === "Please, Try Again.."
+                ? "bg-danger bg-opacity-50"
+                : "bg-transparent"
+            }`}
+          >
             <ImageGrid
               images={shuffledData[currentLevel].images}
               screen={shuffledData[currentLevel].screen}
@@ -169,8 +191,11 @@ function Game() {
 
             {showNextButton && currentLevel < shuffledData.length - 1 && (
               <div className="text-center mt-3">
-                <button onClick={handleNextButtonClick} className="pushable"> 
-                  <span className="front">Next</span>
+                <button
+                  onClick={handleNextButtonClick}
+                  className="btn btn-primary btn-lg"
+                >
+                  Next
                 </button>
               </div>
             )}

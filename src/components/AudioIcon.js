@@ -1,4 +1,3 @@
-import React from 'react';
 import audio_icon from "../assets/images/audio-icon.png"
 
 const AudioIcon = ({ sentence }) => {
