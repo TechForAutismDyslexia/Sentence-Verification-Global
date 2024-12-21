@@ -176,13 +176,17 @@ function Game() {
           <div
             className={`text-center p-3 rounded-3 w-75 shadow-lg mx-auto ${
               feedbackMessage === "Correct"
-                ? "bg-success bg-opacity-50"
+                ? "bg-success bg-opacity-75"
                 : feedbackMessage === "Please, Try Again.."
                 ? "bg-danger bg-opacity-50"
                 : "bg-transparent"
-            }`}
+            }`
+          }
+
+            
           >
-            <ImageGrid
+           <div className="d-flex">
+           <ImageGrid
               images={shuffledData[currentLevel].images}
               screen={shuffledData[currentLevel].screen}
               backgroundColors={backgroundColors}
@@ -190,7 +194,7 @@ function Game() {
             />
 
             {showNextButton && currentLevel < shuffledData.length - 1 && (
-              <div className="text-center mt-3">
+              <div className="text-center mt-3 align-content-center me-4">
                 <button
                   onClick={handleNextButtonClick}
                   className="btn btn-primary btn-lg"
@@ -199,6 +203,7 @@ function Game() {
                 </button>
               </div>
             )}
+           </div>
           </div>
         </>
       )}

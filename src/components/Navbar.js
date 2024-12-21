@@ -22,8 +22,8 @@ export default function Navbar({ currentScreen, totalScreens }) {
 
   return (
     <div>
-      <div className="p-5 shadow-lg">
-        <h1 className="text-center text-black fw-bold mb-3">
+      <div className="pt-3 pb-2 shadow-lg">
+        <h1 className="text-center text-black fw-bold mb-3 p-2">
           Sentence Verification Global
         </h1>
         <div className="d-flex justify-content-between align-items-center px-4">
