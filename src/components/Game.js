@@ -173,16 +173,23 @@ function Game() {
             </div>
           </div>
 
-          <div
-            className={`text-center p-3 rounded-3 w-75 shadow-lg mx-auto ${
+          {/* {
               feedbackMessage === "Correct"
                 ? "bg-success bg-opacity-75"
                 : feedbackMessage === "Please, Try Again.."
                 ? "bg-danger bg-opacity-50"
                 : "bg-transparent"
-            }`
+            } */}
+          <div
+            className={`text-center p-3 rounded-3 w-75 shadow-lg mx-auto `
+            
           }
 
+          style={{background:feedbackMessage === "Correct"? "rgba(0, 255, 4, 0.43)" :
+             feedbackMessage === "Please, Try Again.." ? "rgba(255, 0, 0, 0.5)" 
+             : "transparent" ,
+           
+          }}
             
           >
            <div className="d-flex">
