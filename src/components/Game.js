@@ -171,7 +171,7 @@ function Game() {
           </div>
 
           <div
-            className={`text-center p-3 rounded-3 w-75 shadow-lg mx-auto mt-5 `}
+            className={`text-center p-3 rounded-3 w-75 mb-5 shadow-lg mx-auto mt-5 `}
             style={{
               background:
                 feedbackMessage === "Correct"
