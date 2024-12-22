@@ -10,6 +10,7 @@ import axios from "axios";
 
 function Game() {
   const [currentLevel, setCurrentLevel] = useState(0);
+  //eslint-disable-next-line
   const [selectedImage, setSelectedImage] = useState(null);
   const [showConfetti, setShowConfetti] = useState(false);
   const [backgroundColors, setBackgroundColors] = useState([]);
@@ -18,7 +19,6 @@ function Game() {
   const [startTime, setStartTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [completionTime, setCompletionTime] = useState(null);
-  const [showNextButton, setShowNextButton] = useState(false);
   const [currentScreen, setCurrentScreen] = useState(1);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const totalScreens = shuffledData.length;
@@ -50,7 +50,7 @@ function Game() {
   useEffect(() => {
     setTimeout(() => {
       setFeedbackMessage((prevMsg) => (prevMsg === "Correct" ? "Correct" : ""));
-    }, 3000);
+    }, 2000);
   }, [feedbackMessage]);
 
   useEffect(() => {
@@ -78,11 +78,13 @@ function Game() {
     if (chosenImage === correctAnswer) {
       setShowConfetti(true);
       setFeedbackMessage("Correct");
+      setTimeout(() => {
+        handleNextLevel();
+      }, 4000);
       const newBackgroundColors = shuffledData[currentLevel].images.map(
         (_, i) => (i === index ? "green" : "transparent")
       );
       setBackgroundColors(newBackgroundColors);
-      setShowNextButton(true);
 
       if (currentLevel === shuffledData.length - 1) {
         setTimeout(() => {
@@ -111,12 +113,7 @@ function Game() {
       setSelectedImage(null);
       setBackgroundColors([]);
       setShowConfetti(false);
-      setShowNextButton(false);
     }
-  };
-
-  const handleNextButtonClick = () => {
-    handleNextLevel();
   };
 
   const handlePlayAgain = () => {
@@ -130,7 +127,6 @@ function Game() {
     setCompletionTime(null);
     setGameCompleted(false);
     setCurrentScreen(1);
-    setShowNextButton(false);
   };
 
   const progressPercentage = (currentScreen / totalScreens) * 100;
@@ -150,7 +146,6 @@ function Game() {
       className="game-container position-relative"
       style={{
         minHeight: "100vh",
-        backgroundImage: "linear-gradient(to bottom right, #a4a6f0, #73aaff)",
       }}
     >
       <Navbar
@@ -166,51 +161,34 @@ function Game() {
         <>
           <ProgressBar progressPercentage={progressPercentage} />
 
-          <div className="p-3 bg-transparent rounded">
-            <AudioIcon sentence={shuffledData[currentLevel].sentence} />
-            <div className="text-center fs-4 fw-bold">
+          <div className="text-center fs-4 fw-bold mt-5 d-flex flex-wrap justify-content-center ">
+            <div>
+              <AudioIcon sentence={shuffledData[currentLevel].sentence} />
+            </div>
+            <div className="px-1 w-75 text-center">
               {shuffledData[currentLevel].sentence}
             </div>
           </div>
 
-          {/* {
-              feedbackMessage === "Correct"
-                ? "bg-success bg-opacity-75"
-                : feedbackMessage === "Please, Try Again.."
-                ? "bg-danger bg-opacity-50"
-                : "bg-transparent"
-            } */}
           <div
-            className={`text-center p-3 rounded-3 w-75 shadow-lg mx-auto `
-            
-          }
-
-          style={{background:feedbackMessage === "Correct"? "rgba(0, 255, 4, 0.43)" :
-             feedbackMessage === "Please, Try Again.." ? "rgba(255, 0, 0, 0.5)" 
-             : "transparent" ,
-           
-          }}
-            
+            className={`text-center p-3 rounded-3 w-75 shadow-lg mx-auto mt-5 `}
+            style={{
+              background:
+                feedbackMessage === "Correct"
+                  ? "rgba(0, 255, 4, 0.43)"
+                  : feedbackMessage === "Please, Try Again.."
+                  ? "rgba(255, 0, 0, 0.5)"
+                  : "transparent",
+            }}
           >
-           <div className="d-flex">
-           <ImageGrid
-              images={shuffledData[currentLevel].images}
-              screen={shuffledData[currentLevel].screen}
-              backgroundColors={backgroundColors}
-              handleChoice={handleChoice}
-            />
-
-            {showNextButton && currentLevel < shuffledData.length - 1 && (
-              <div className="text-center mt-3 align-content-center me-4">
-                <button
-                  onClick={handleNextButtonClick}
-                  className="btn btn-primary btn-lg"
-                >
-                  Next
-                </button>
-              </div>
-            )}
-           </div>
+            <div className="d-flex">
+              <ImageGrid
+                images={shuffledData[currentLevel].images}
+                screen={shuffledData[currentLevel].screen}
+                backgroundColors={backgroundColors}
+                handleChoice={handleChoice}
+              />
+            </div>
           </div>
         </>
       )}

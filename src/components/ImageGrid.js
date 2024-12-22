@@ -40,7 +40,7 @@ const ImageGrid = ({
             className="col-6 col-sm-4 col-md-3 mb-3 d-flex justify-content-center"
           >
             <div
-              className={`bg-light shadow-sm rounded position-relative w-100`}
+              className={`bg-light border border-black border-4 shadow-sm rounded position-relative w-100`}
               style={{ paddingTop: "100%", cursor: "pointer" }}
               onClick={() => handleChoice(image, index)}
             >

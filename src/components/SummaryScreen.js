@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 
 const SummaryScreen = ({ totalAttempts, totalElapsedTime }) => {
   const timer = Math.floor(totalElapsedTime / 1000);
